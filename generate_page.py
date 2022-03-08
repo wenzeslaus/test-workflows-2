@@ -17,6 +17,7 @@ with doc:
 
     with tags.div():
         tags.attr(cls="body")
+        tags.h2("Abstract")
         tags.p("Lorem ipsum..")
 
 print(doc)
