@@ -1,19 +1,21 @@
+"""Generate an HTML page"""
+
 import dominate
-from dominate.tags import *
+import dominate.tags as tags
 
 doc = dominate.document(title='Dominate your HTML')
 
 with doc.head:
-    link(rel='stylesheet', href='style.css')
-    script(type='text/javascript', src='script.js')
+    tags.link(rel='stylesheet', href='style.css')
+    tags.script(type='text/javascript', src='script.js')
 
 with doc:
-    with div(id='header').add(ol()):
+    with tags.div(id='header').add(ol()):
         for i in ['home', 'about', 'contact']:
-            li(a(i.title(), href='/%s.html' % i))
+            tags.li(tags.a(i.title(), href=f'/{i}.html'))
 
     with div():
-        attr(cls='body')
-        p('Lorem ipsum..')
+        tags.attr(cls='body')
+        tags.p('Lorem ipsum..')
 
 print(doc)
