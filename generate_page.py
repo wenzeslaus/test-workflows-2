@@ -11,6 +11,7 @@ with doc.head:
 
 with doc:
     with tags.div(id="header").add(tags.ol()):
+        tags.h1("My Page")
         for i in ["home", "about", "contact"]:
             tags.li(tags.a(i.title(), href=f"/{i}.html"))
 
