@@ -16,6 +16,7 @@ with doc:
 
     with tags.div():
         tags.attr(cls="body")
-        tags.p("Lorem ipsum..")
+        tags.p("Lorem ipsum...")
+        tags.p("More lorem ipsum.")
 
 print(doc)
