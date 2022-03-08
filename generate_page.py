@@ -1,7 +1,7 @@
 """Generate an HTML page"""
 
 import dominate
-import dominate.tags as tags
+from dominate import tags
 
 doc = dominate.document(title='Dominate your HTML')
 
@@ -10,11 +10,11 @@ with doc.head:
     tags.script(type='text/javascript', src='script.js')
 
 with doc:
-    with tags.div(id='header').add(ol()):
+    with tags.div(id='header').add(tags.ol()):
         for i in ['home', 'about', 'contact']:
             tags.li(tags.a(i.title(), href=f'/{i}.html'))
 
-    with div():
+    with tags.div():
         tags.attr(cls='body')
         tags.p('Lorem ipsum..')
 
