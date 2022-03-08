@@ -25,6 +25,7 @@ jobs:
 
       - name: Generate file
         run: |
+          mkdir build
           python generate_page.py > build/index.html
 
       - name: Deploy 🚀
